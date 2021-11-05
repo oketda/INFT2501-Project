@@ -25,6 +25,10 @@ export default function Game({navigation, route}) {
         setHiddenWord(words[Math.floor(Math.random()*words.length)])
     }, []);
 
+    const test = () => {
+        alert("hei")
+    }
+
     const image = "image_" + wrongLetters.length;
 
     const checkLetter = (letter) => {

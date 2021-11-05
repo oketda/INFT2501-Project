@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-n
 const no = require('../assets/images/flag-icons/no.png')
 const uk = require('../assets/images/flag-icons/uk.png')
 
-export default function Home({ navigation }) {
+export default function Home({ navigation, route }) {
 
     const [english, setEnglish] = useState(true)
     const [wordIndex, setWordIndex] = useState(0)
@@ -16,8 +16,9 @@ export default function Home({ navigation }) {
     const flagPressed = (bool, index) => {
         setEnglish(bool)
         setWordIndex(index)
+        route.params.setAppbarLanguage(bool)
     }
-
+    
     return(
         <View style={styles.container}>
             <Text style={{marginBottom: 40, fontSize: 32}}>{english ? "Welcome to Hangman! Press start game" : "Velkommen til Hangman! Trykk start spillet"}</Text>
