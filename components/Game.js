@@ -46,10 +46,12 @@ export default function Game({navigation, route}) {
             if (wrongLetters.length == 5) {
                 if (english) {
                     setButtonLabel("Go back")
-                    setFinalMessage("Unlucky! Press 'Go back' and try again!")
+                    var message = "Unlucky! The correct word was '" + hiddenWord + "'. Press 'Go back' and try again!"
+                    setFinalMessage(message)
                 } else {
                     setButtonLabel("Gå tilbake")
-                    setFinalMessage("Uff da! Trykk på 'Gå tilbake' og prøv igjen!")
+                    var message = "Uff da! Det riktige ordet var '" + hiddenWord  + "'. Trykk på 'Gå tilbake' og prøv igjen!"
+                    setFinalMessage(message)
                 }
             }
         }
