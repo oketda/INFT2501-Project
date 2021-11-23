@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { View, Text, StyleSheet, Image, Button, TouchableHighlight, TextInput, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Image, Button, TouchableHighlight, TextInput } from "react-native";
 import * as HangmanImages from '../assets/images/imageObjects'
 
 export default function Game({navigation, route}) {
@@ -24,10 +24,6 @@ export default function Game({navigation, route}) {
         
         setHiddenWord(words[Math.floor(Math.random()*words.length)])
     }, []);
-
-    const test = () => {
-        alert("hei")
-    }
 
     const image = "image_" + wrongLetters.length;
 

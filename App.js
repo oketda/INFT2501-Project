@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from "./components/Home"
 import Game from "./components/Game"
-import { Alert, Image, TouchableOpacity } from 'react-native';
+import { Alert, Image, TouchableOpacity, LogBox } from 'react-native';
 
 const info_icon = require('./assets/images/info_icon.png')
 
@@ -12,6 +12,10 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   const [english, setEnglish] = useState(true)
+
+  LogBox.ignoreLogs([
+    'Non-serializable values were found in the navigation state',
+  ]);
 
   const info_english = ["How to play hangman",
    "In hangman your task is to find the secret word by guessing letters." 
